@@ -1,7 +1,7 @@
 //Declare Current Day and Time
 var todayDate = moment().format('dddd, MMMM Do, YYYY');
 var currentTime = moment().format('h:mm:ss a');
-var currentHour = moment().format('HH');
+var currentHour = 10//moment().format('HH');
 
 //Create Day and Time Elements
 var todayDateEl = document.getElementById("currentDay");
@@ -16,12 +16,13 @@ console.log(currentHour);
 for (var i = 9; i <= 17; i++) {
     //Need to get previously saved data for each hour
     //Compare current time to hour to determine if hour is in the past, present or future
+    console.log(i);
     if (i > currentHour) {
-        console.log('future');
+        timeStamp = "future";
     } else if (i === currentHour) {
-        console.log('present');
-    } else {
-        console.log('past');
+        timeStamp = "present";
+    } else if (i < currentHour) {
+        timeStamp = "past";
     }
 
     var hour = i;
@@ -37,7 +38,7 @@ for (var i = 9; i <= 17; i++) {
             <p>${hour}${amPM}</p>
         </div>
         <div class="time-block">
-            <textarea class="description"></textarea>
+            <textarea class="description ${timeStamp}"></textarea>
         </div>
         <div>
             <button data-hour="${i}" class="saveBtn">Save</button>
