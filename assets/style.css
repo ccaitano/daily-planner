@@ -11,8 +11,14 @@ body {
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;
+    width: 100%;
+    margin:0;
   }
   
+  p {
+    margin: 0;
+    padding-right: 10px;
+  }
   .jumbotron {
     text-align: center;
     background-color: transparent;
@@ -23,23 +29,26 @@ body {
 
   .description{
     white-space: pre-wrap;
+    margin: 0;
   }
   
   .time-block{
     text-align: center;
     border-radius: 15px;
+    padding: 0;
   }
-  
+
   .row {
-    white-space: pre-wrap;
-    height: 80px;
-    border-top: 1px solid white;;
+    margin: 0;
   }
   
   .hour {
+    display: flex;
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
+    justify-content: flex-end;
+    align-items: center;
   }
   
   .past {
@@ -62,10 +71,11 @@ body {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
+    height: 50px;
     color: white;
   }
   
-  .saveBtn i:hover {
+  .saveBtn:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }

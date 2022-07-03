@@ -1,7 +1,7 @@
 //Declare Current Day and Time
 var todayDate = moment().format('dddd, MMMM Do, YYYY');
 var currentTime = moment().format('h:mm:ss a');
-var currentHour = 10//moment().format('HH');
+var currentHour = moment().format('HH');
 
 //Create Day and Time Elements
 var todayDateEl = document.getElementById("currentDay");
@@ -12,6 +12,7 @@ currentTimeEl.textContent = currentTime;
 //Display Time Blocks with Save Button
 var timeBlocksEl = document.querySelector(".container");
 var amPM = "AM";
+
 console.log(currentHour);
 for (var i = 9; i <= 17; i++) {
     //Need to get previously saved data for each hour
@@ -19,7 +20,7 @@ for (var i = 9; i <= 17; i++) {
     console.log(i);
     if (i > currentHour) {
         timeStamp = "future";
-    } else if (i === currentHour) {
+    } else if (i == currentHour) {
         timeStamp = "present";
     } else if (i < currentHour) {
         timeStamp = "past";
@@ -33,15 +34,15 @@ for (var i = 9; i <= 17; i++) {
         hour = i-12;
     }
     var hourTemplate = `
-    <div class="row">
-        <div class="hour">
+    <div class="row no-gutters">
+        <div class="hour col">
             <p>${hour}${amPM}</p>
         </div>
-        <div class="time-block">
+        <div class="time-block col-6">
             <textarea class="description ${timeStamp}"></textarea>
         </div>
-        <div>
-            <button data-hour="${i}" class="saveBtn">Save</button>
+        <div class="col">
+            <button data-hour="${i}" class="saveBtn">SAVE 💾</button>
         </div>
     </div>`;
     timeBlocksEl.innerHTML += hourTemplate;
