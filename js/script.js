@@ -34,7 +34,7 @@ for (var i = 9; i <= 17; i++) {
         hour = i-12;
     }
     var hourTemplate = `
-    <div class="row no-gutters">
+    <div id="hour-${i}" class="row no-gutters ${timeStamp}">
         <div class="hour col">
             <p>${hour}${amPM}</p>
         </div>
