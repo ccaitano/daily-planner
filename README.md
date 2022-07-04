@@ -1,5 +1,5 @@
-# daily-planner - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-Responsive Daily Planner
+# daily-planner 📅 - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Responsive Daily Planner/Work Day Scheduler
 
 ➡️ [DEPLOYED APPLICATION](https://ccaitano.github.io/daily-planner/)
 
