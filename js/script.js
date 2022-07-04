@@ -1,6 +1,6 @@
 //Declare Current Day and Time
 var todayDate = moment().format('dddd, MMMM Do, YYYY');
-var currentTime = moment().format('h:mm:ss a');
+var currentTime = moment().format('h:mm a');
 var currentHour = moment().format('HH');
 
 //Create Day and Time Elements
@@ -40,14 +40,14 @@ for (var i = 9; i <= 17; i++) {
     }
     //Set Template for each timeblock
     var hourTemplate = `
-    <div id="hour-${i}" class="row no-gutters ${timeStamp}">
-        <div class="hour col">
+    <div id="hour-${i}" class="row no-gutters">
+        <div class="hour col-1">
             <p>${hour}${amPM}</p>
         </div>
-        <div class="time-block col-6">
+        <div class="time-block col-10">
             <textarea id="input-${i}" class="description ${timeStamp}">${data}</textarea>
         </div>
-        <div class="btncol col">
+        <div class="btncol col-1">
             <button id="${i}" class="saveBtn">SAVE 💾</button>
         </div>
     </div>`;
