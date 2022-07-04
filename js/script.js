@@ -15,7 +15,12 @@ var amPM = "AM";
 
 for (var i = 9; i <= 17; i++) {
     //Need to get previously saved data for each hour
-    // var key = "hour-"+i;
+    var savedKey = JSON.parse(localStorage.getItem("hour-"+i));
+    if (savedKey !== null) {
+        var data = savedKey;
+    } else {
+        data = "";
+    }
 
     //Compare current time to hour to determine if hour is in the past, present or future
     if (i > currentHour) {
@@ -40,7 +45,7 @@ for (var i = 9; i <= 17; i++) {
             <p>${hour}${amPM}</p>
         </div>
         <div class="time-block col-6">
-            <textarea id="input-${i}" class="description ${timeStamp}"></textarea>
+            <textarea id="input-${i}" class="description ${timeStamp}">${data}</textarea>
         </div>
         <div class="btncol col">
             <button id="${i}" class="saveBtn">SAVE 💾</button>
@@ -55,15 +60,11 @@ for (var i = 9; i <= 17; i++) {
 //Need to set up a click event listener on the container
 var containerEl = document.querySelector(".container");
 
+//Checks which element on the page was clicked
 containerEl.addEventListener("click", function(event) {
     console.log(event.target.id);
     var key = event.target.id;
     var textEl = document.getElementById("input-"+key);
     console.log(textEl.value);
-    // localStorage.setItem("hour-"+key, JSON.stringify(savedData));
+    localStorage.setItem("hour-"+key, JSON.stringify(textEl.value));
 });
-//Need to get the hour from the clicked button's (event.target) "data-hour" attribute
-
-//Use the hour to create a key for local storage
-
-
