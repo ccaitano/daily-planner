@@ -47,14 +47,12 @@ for (var i = 9; i <= 17; i++) {
         <div class="time-block col-10">
             <textarea id="input-${i}" class="description ${timeStamp}">${data}</textarea>
         </div>
-        <div class="btncol col-1">
+        <div class="col-1">
             <button id="${i}" class="saveBtn">SAVE 💾</button>
         </div>
     </div>`;
     //Create timeblock for each hour
-    timeBlocksEl.innerHTML += hourTemplate;
-    //Create Button Elements
-    
+    timeBlocksEl.innerHTML += hourTemplate;   
 }
 
 //Need to set up a click event listener on the container
